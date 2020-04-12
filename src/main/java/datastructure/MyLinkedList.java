@@ -15,6 +15,7 @@ public class MyLinkedList {
         } else {
             MyLinkedListNode newHead = new MyLinkedListNode();
             newHead.setNext(this.head);
+            newHead.setVal(val);
             this.head = newHead;
         }
     }
@@ -23,6 +24,12 @@ public class MyLinkedList {
         if (index < 0) {
             return this.head.getVal();
         }
-        return this.head.getVal();
+        int i = 0;
+        MyLinkedListNode temp = this.head;
+        while (i < index) {
+            temp = temp.getNext();
+            i++;
+        }
+        return temp.getVal();
     }
 }

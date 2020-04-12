@@ -15,4 +15,13 @@ public class MyLinkedListTest {
         myLinkedList.addAtHead(1);
         assertEquals(1, myLinkedList.get(0));
     }
+
+    @Test
+    public void should_add_an_item_before_original_head_when_add_at_head() {
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.addAtHead(1);
+        myLinkedList.addAtHead(2);
+        assertEquals(2, myLinkedList.get(0));
+        assertEquals(1, myLinkedList.get(1));
+    }
 }
