@@ -72,5 +72,13 @@ public class MyLinkedList {
         if (index == 0) {
             this.head = this.head.getNext();
         }
+        int i = 0;
+        MyLinkedListNode prevNode = this.head;
+        while (i < index - 1) {
+            prevNode = prevNode.getNext();
+            i++;
+        }
+        MyLinkedListNode destNode = prevNode.getNext();
+        prevNode.setNext(destNode.getNext());
     }
 }

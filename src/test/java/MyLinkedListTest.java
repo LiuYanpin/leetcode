@@ -87,13 +87,24 @@ public class MyLinkedListTest {
     }
 
     @Test
-    public void should_delete_at_given_index() {
+    public void should_delete_at_head() {
         MyLinkedList myLinkedList = new MyLinkedList();
         myLinkedList.addAtHead(1);
         myLinkedList.addAtHead(2);
         myLinkedList.addAtHead(3);
         myLinkedList.deleteAtIndex(0);
         assertEquals(2, myLinkedList.get(0));
+        assertEquals(1, myLinkedList.get(1));
+    }
+
+    @Test
+    public void should_delete_at_given_index() {
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.addAtHead(1);
+        myLinkedList.addAtHead(2);
+        myLinkedList.addAtHead(3);
+        myLinkedList.deleteAtIndex(1);
+        assertEquals(3, myLinkedList.get(0));
         assertEquals(1, myLinkedList.get(1));
     }
 }
