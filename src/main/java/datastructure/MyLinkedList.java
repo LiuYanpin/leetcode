@@ -27,6 +27,9 @@ public class MyLinkedList {
         int i = 0;
         MyLinkedListNode temp = this.head;
         while (i < index) {
+            if (Objects.isNull(temp.getNext())) {
+                break;
+            }
             temp = temp.getNext();
             i++;
         }
@@ -43,6 +46,31 @@ public class MyLinkedList {
                 break;
             }
             temp = temp.getNext();
+        }
+    }
+
+    public void addAtIndex(int index, int val) {
+        int i = 0;
+        MyLinkedListNode temp = this.head;
+        while (i < index - 1) {
+            if (Objects.isNull(temp.getNext())) {
+                break;
+            }
+            temp = temp.getNext();
+            i++;
+        }
+        MyLinkedListNode newNode = new MyLinkedListNode();
+        newNode.setVal(val);
+        newNode.setNext(temp.getNext());
+        temp.setNext(newNode);
+    }
+
+    public void deleteAtIndex(int index) {
+        if (index < 0) {
+            return;
+        }
+        if (index == 0) {
+            this.head = this.head.getNext();
         }
     }
 }
