@@ -24,4 +24,28 @@ public class MyLinkedListTest {
         assertEquals(2, myLinkedList.get(0));
         assertEquals(1, myLinkedList.get(1));
     }
+
+    @Test
+    public void should_add_an_item_when_add_at_tail() {
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.addAtHead(1);
+        myLinkedList.addAtTail(2);
+        assertEquals(1, myLinkedList.get(0));
+        assertEquals(2, myLinkedList.get(1));
+    }
+
+    @Test
+    public void should_add_item_correctly() {
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.addAtHead(1);
+        myLinkedList.addAtTail(2);
+        myLinkedList.addAtHead(3);
+        myLinkedList.addAtTail(4);
+
+        assertEquals(3, myLinkedList.get(0));
+        assertEquals(1, myLinkedList.get(1));
+        assertEquals(2, myLinkedList.get(2));
+        assertEquals(4, myLinkedList.get(3));
+
+    }
 }

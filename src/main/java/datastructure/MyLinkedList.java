@@ -32,4 +32,17 @@ public class MyLinkedList {
         }
         return temp.getVal();
     }
+
+    public void addAtTail(int val) {
+        MyLinkedListNode newTail = new MyLinkedListNode();
+        newTail.setVal(val);
+        MyLinkedListNode temp = this.head;
+        while (Objects.nonNull(temp)) {
+            if (Objects.isNull(temp.getNext())) {
+                temp.setNext(newTail);
+                break;
+            }
+            temp = temp.getNext();
+        }
+    }
 }
